@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# script to secure the laptop quickly
+
+# umount encrypted directories
+# cdetach classified
+# cdetach secure
+
+# force logout on all virtual terminals
+
+# password protect the system
+# xlock -mode flag -message "Thank You for the Treats!"
+# xlock -mode matrix
+
+gnome-screensaver-command -l

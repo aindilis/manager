@@ -1,0 +1,14 @@
+When sleep is  anticipated - initiate a question  answering session to
+try to reconstruct the days events and add them to event log.
+
+When  sleep has  started,  and  the learning  phase  is initiated,  do
+numerous things.   Use voice activity  detection to detect  and record
+and sleep talking.  At the  proper time, initiate sleep learning using
+CLEAR.  Start  sbagen to control  when dream sequences start  and end.
+Play wakeup  and prompt the user  to record their  dream.  Remind them
+how much time they have to remember it all.
+
+But first, the planning domain should ensure that they get in bed with
+their headphones on, and verify that they can hear it.
+
+During awake learning modes (gtypst, etc), also run quiz

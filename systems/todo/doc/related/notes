@@ -1,0 +1,18 @@
+/var/lib/myfrdcsa/codebases/releases/pse-0.1/pse-0.1/scripts/get-habitual.pl
+
+$VAR1 = [
+          'Write documentation for projects a little each day.',
+          'Make new internet friends.',
+          'Subscribe to more email lists for AI fields and projects...',
+          'Check that backups are being made.',
+          'Set aside time for actually doing tasks.',
+          'Interrelate all the major goals from the system.',
+          'The elicitation of user\'s experience for EMS must take place over a long time of continual elicitation.',
+          'Start sending Eva links to events and people to see and meet in Chicago...',
+          'Be available to answer questions on channels like fsf.',
+          'Start recording names of people who are given accounts, so can find them in a bunch',
+          'Read the source Luke.',
+          'Start collecting terms like "adaptive information filtering"',
+          'Day by day do a bit of cleaning of the FRDCSA code.',
+          'Make an effort to classify existing unilang entries.'
+        ];

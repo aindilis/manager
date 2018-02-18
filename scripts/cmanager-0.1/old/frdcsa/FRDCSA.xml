@@ -1,0 +1,17 @@
+<system>
+  <title>CManager</title>
+  <short-description>
+    Cron-based Manager
+  </short-description>
+  <medium-description>
+
+  </medium-description>
+  <long-description>
+
+    Because of  some technical bottlenecks  with Manager, this  is the
+    old cron based  manager, and I have made  an internal codebase out
+    so that  I can  automatically package it  with predator to  get it
+    working, since the functionality is rather essential.
+
+  </long-description>
+</system>

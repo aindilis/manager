@@ -1,0 +1,44 @@
+;; the information we want and need is this:
+;; update us when a given file is:
+;; opened, closed, displayed, concealed, made current, made noncurrent, editted (how much), saved
+
+;; ie log format is
+
+;; opened,48738975384975,/var/lib/myfrdcsa/catfood/etc
+;; displayed,48738975384975,/var/lib/myfrdcsa/catfood/etc
+;; made-current,48738975384975,/var/lib/myfrdcsa/catfood/etc
+;; made-current,48738975384978,/var/lib/myfrdcsa/djfsdkjf/fdjksf
+;; displayed,48738975384978,/var/lib/myfrdcsa/djfsdkjf/fdjksf
+
+;; then, by analyzing this over time, and with a map from files to
+;; task contexts, we can graph the activity of various task contexts
+;; over time.  cool!
+
+;; Then all we need is to save that data.  In otherwords, have a
+;; timestamp for whenever
+
+;; opening a buffer denotes activity, but the activity degrades over
+;; time.  we can plot the task context activity this way.  It degrades
+;; as other task contexts are invoked.  note the reflection of tasks
+;; in each other.  closing a file may indicate progress towards
+;; completion.  integration of task curve (which must sum to 100
+;; percent) over time indicates time spent for given interval.  these
+;; calculations done in perl for ease, all events logged via SQL?
+;; sounds burdensome for this particular application, instead, write
+;; it to a special file in emacs-logs
+
+;; (global-set-key "\C-crtm" 'manager-compute-displayed-buffers)
+
+;; (defun manager-compute-displayed-buffers ()
+;;  ""
+;;  (interactive)
+;;  (setq manager-last-buffer-display-counts 'manager-buffer-display-counts)
+;;  (setq manager-buffer-display-counts (map 'vector 'manager-get-buffer-display-count (map 'vector 'get-buffer (buffer-list))))
+;;  ;; now compute a difference, add it to the activity
+;;  ;; however we still can't determine what is open at this very minute!, can only determine current buffer
+;;  )
+
+;; (defun manager-get-buffer-display-count (buffername)
+;;  (save-excursion
+;;   (set-buffer buffername)
+;;   (list buffername buffer-display-count buffer-display-time)))

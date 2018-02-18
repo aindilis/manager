@@ -1,0 +1,7 @@
+usr/bin
+usr/sbin
+etc/cmanager
+etc/cron.d
+var/lib/cmanager
+usr/share/cmanager
+

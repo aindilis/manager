@@ -1,0 +1,16 @@
+2ce3e000015753b2a9732fbcd4d5dc67  usr/bin/cmanager
+c5ea65290c7f3f21ddaf3c5f15d22bc9  usr/share/cmanager/cmanager/bin/feednetscape.pl
+f0bd903de1fb33aa81ae6e3f0cd7fc2b  usr/share/cmanager/cmanager/bin/glimpseview
+a77fe3e5410dbed4cf6c651e9be7a166  usr/share/cmanager/cmanager/bin/hisv
+1ae4884a1f9c66837ed521f0a02ffa90  usr/share/cmanager/cmanager/bin/run
+6eb0783ef66ce3240051d467864df4ba  usr/share/doc/cmanager/todo
+983bbdbd626ea0280efedce0c1333ef4  usr/share/doc/cmanager/README.Debian
+b1c44303ff840668cd4389584abf08ae  usr/share/doc/cmanager/copyright
+32cff89711da21ced23191e80e8a7677  usr/share/doc/cmanager/changelog.Debian.gz
+fed0d34074ce6146c583bfdb5878aad9  etc/cmanager/cmanager/loud.aumixrc
+ab30bee7590ec04471c640ea53e6bb2a  etc/cmanager/cmanager/quiet.aumixrc
+29575a05e1372082f3f6269004b0e72f  etc/cmanager/cmanager/wakeup.txt
+8b46d650fca073f3788210d491f34ff0  etc/cron.d/cmanager
+414014faf8a1d41398841981f5dfb20d  var/lib/cmanager/cmanager/buglist
+68b329da9893e34099c7d8ad5cb9c940  var/lib/cmanager/cmanager/read.list
+68b329da9893e34099c7d8ad5cb9c940  var/lib/cmanager/cmanager/read.list.tmp

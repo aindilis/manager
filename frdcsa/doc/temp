@@ -1,0 +1,11 @@
+  # this data should be stored by boss?  architect? probably boss
+  # should know what the various pieces of code do.  its part of the
+  # data for capabilities mapping, mapping tasks to code right there
+  # is room for improvement.  by knowing what functions are being
+  # editted, and what capabilities those functions provide, we can
+  # instantly know what the task context is.  A task subsumption
+  # hierarchy can then be used to view time-in-task and productivity
+  # in any context by any programmer
+
+  # furthermore PSE should watch these trends and warn the user when
+  # they stray too far

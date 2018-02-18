@@ -1,0 +1,24 @@
+  } elsif(0) {
+    my @commands =
+      (
+       "set multiplot",
+       "set title \"Context Activity\"",
+       "set label 'text' at 0,0,5.5",
+      );
+
+    foreach my $task (@idx) {
+      # push @commands, "set color $i";
+#       push @commands, "set label \"$task\" at ".($i*10).",".($i*10);
+#       push @commands, "set label \"$task\"";
+      push @commands,
+	join(" ",
+	     "plot",
+	     "[".($maxx - 3600).":$maxx]",
+	     "[0:".($maxy*1.2)."]",
+	     "\"/tmp/context\"",
+	     "using 1:$i",
+	     "smooth csplines",
+	     "with lines"
+	    );
+      ++$i;
+    }

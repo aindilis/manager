@@ -1,0 +1,2 @@
+cvs -d:pserver:anonymous@cvs.sf.net:/cvsroot/opencyc login
+cvs -d:pserver:anonymous@cvs.sf.net:/cvsroot/opencyc co .

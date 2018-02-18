@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd /home/ajd/media/video/anim
+for it in `ls | rl`; do mplayer $it -loop 0 ; done

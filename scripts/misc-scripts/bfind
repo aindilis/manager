@@ -1,0 +1,16 @@
+#!/usr/bin/perl -w
+
+# breadth first search find
+
+my $file = `pwd`;
+chomp $file;
+push @files, $file;
+while (@files) {
+  $file = shift @files;
+  print "$file";
+  if (-d $file) {
+    print "/";
+    push @files, map {"$file/$_"} split /\n/,`ls -1 $file`;
+  }
+  print "\n";
+}

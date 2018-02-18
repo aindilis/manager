@@ -1,0 +1,60 @@
+#!/usr/bin/perl -w
+
+# do things
+
+use Data::Dumper;
+
+my $services = eval `cat /home/ajd/bin/service-data`;
+my $yes = 0;
+
+# print Dumper($services);
+
+if (! @ARGV) {
+  print "Registered Services\n\n";
+  foreach my $service (values %{$services}) {
+    print "Id:\t\t". $service->{Id} . "\n";
+    my @list = map { "(" . $_ . ")" } @{$service->{Keywords}};
+    print "Keywords:\t" . join(' ',@list) . "\n";
+    print "Command:\t". $service->{Command} . "\n\n";
+  }
+}
+
+foreach $arg (@ARGV) {
+  if ($arg =~ /-y/) {
+    $yes = 1;
+  }
+  if (defined $services->{$arg}) {
+    ExecuteService($services->{$arg});
+  } else {
+    my @matches = ();
+    foreach my $service (values %{$services}) {
+      foreach my $keyword (@{ $service->{Keywords} }) {
+	if ($arg eq $keyword) {
+	  push @matches, $service;
+	}
+      }
+    }
+    foreach my $match (@matches) {
+      ExecuteService($match);
+    }
+  }
+}
+
+sub ExecuteService {
+  my ($service) = (shift);
+  print $service->{Command} . "\n";
+  ApproveCommand($service->{Command});
+}
+
+sub ApproveCommand {
+  my ($command) = (shift);
+  if ($yes) {
+    system $command;
+  } else {
+    print "Execute this command? <<<$command>>>\n";
+    my $response = <STDIN>;
+    if ($response =~ /y(es)?/i) {
+      system $command;
+    }
+  }
+}

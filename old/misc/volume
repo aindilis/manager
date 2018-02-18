@@ -1,0 +1,12 @@
+#!/usr/bin/perl -w
+
+if ($ARGV[0] =~ /mute/i) {
+  system "echo aumix -f /home/ajd/aumix/aumix.mute -L q";
+  system "aumix -f /home/ajd/aumix/aumix.mute -L q";
+} elsif ($ARGV[0] =~ /medium/i) {
+  system "echo aumix -f /home/ajd/aumix/aumix.medium -L q";
+  system "aumix -f /home/ajd/aumix/aumix.medium -L q";
+} elsif ($ARGV[0] =~ /loud/i) {
+  system "echo aumix -f /home/ajd/aumix/aumix.loud -L q";
+  system "aumix -f /home/ajd/aumix/aumix.loud -L q";
+}

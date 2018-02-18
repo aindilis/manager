@@ -1,0 +1,17 @@
+#!/usr/bin/perl -w
+
+my $affected = 0;
+
+my $lastfile = "/var/lib/myfrdcsa/codebases/internal/manager/systems/todo/data/last-agenda-results";
+if (-f $lastfile) {
+  system "cat \"$lastfile\"; rm -f \"$lastfile\"";
+  $affected = 1;
+}
+
+my $overduefile = "/var/lib/myfrdcsa/codebases/internal/manager/systems/todo/data/overdue";
+if (-f $overduefile) {
+  print "You have overdue goals\n";
+  $affected = 1;
+}
+
+print ":" if $affected;

@@ -1,0 +1,4 @@
+#!/usr/local/bin/perl -w 
+
+while(<>) { s/:.*//; $e{$_}=1; } 
+foreach (keys %e) { chomp; print "lynx -force_html $_\n"; }

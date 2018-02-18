@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# time to do daily activities:
+
+# add all financial items
+cattach classified
+/home/ajd/bin/services finances
+
+# some items to add
+# Put on the following shirt:
+# Grab the following items.
+

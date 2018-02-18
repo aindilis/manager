@@ -1,0 +1,15 @@
+;; Object manager/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "manager/"
+  :tables (list 
+   (semanticdb-table "manager.el"
+    :major-mode 'emacs-lisp-mode
+    :tags '(("setq" code nil nil [901 939]) ("setq" code nil nil [940 981]) ("setq" code nil nil [982 1027]) ("global-set-key" code nil nil [1029 1089]) ("manager-start" function (:user-visible-flag t) nil [1091 1218]) ("manager-open-dribble-file" function (:user-visible-flag t) nil [1220 1502]) ("manager-compute-dribble-file" function (:user-visible-flag t) nil [1504 1734]) ("manager-recompute-dribble-file" function (:user-visible-flag t) nil [1736 2575]) ("manager-start-logging" function nil nil [2577 3086]) ("manager-find-file-hook" function nil nil [3088 3244]) ("manager-kill-buffer-hook" function nil nil [3246 3470]) ("manager-stop-logging" function nil nil [3472 3556]) ("manager-select-latest" function (:arguments ("directory" "initiali" "prefix" "postfix")) nil [3558 4133]) ("manager-log-buffer-event" function (:user-visible-flag t :arguments ("action" "filename")) nil [4135 4636]) ("manager-send-message" function (:arguments ("string")) nil [4638 4924]) ("manager-update" function nil nil [4926 5121]) ("manager-check-windows" function (:user-visible-flag t) nil [5123 5987]) ("manager-create-filename-hash" function nil nil [5989 6221]) ("manager-print-hash" function (:user-visible-flag t) nil [6223 6431]) ("manager-plot-task-context-trends" function (:user-visible-flag t) nil [6433 6564]) ("manager-run" function (:user-visible-flag t :arguments ("arg")) nil [6566 6897]) ("manager" package nil nil [6899 6917]))
+    :file "manager.el"
+    :pointmax 6943
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0beta3"
+  :semanticdb-version "2.0beta3"
+  )

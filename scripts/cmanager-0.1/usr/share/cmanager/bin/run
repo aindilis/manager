@@ -1,0 +1,26 @@
+#!/usr/local/bin/perl -w 
+
+$IN = 1;
+$OUT = 2;
+if (-e "progs") {
+	open(IN,"progs") or die "error opening ./progs\n";
+} else {
+	open(IN,"/usr/local/src/progs/progs") 
+	or die "error opening /usr/local/src/progs/progs\n";
+}
+open(OUT,"> /tmp/run.out") or die "error opening ./run.out\n";
+
+$name = $ARGV[0];
+$display = 0;
+while(<IN>) {
+	if (/# <$name>/) {
+		$display = 1;
+	} 
+	if($display) {
+		print;
+		print OUT; 
+	}
+	if (/# <\/$name>/) {
+		$display = 0;
+	}
+}

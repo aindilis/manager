@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sudo ntpdate ntp-1.ece.cmu.edu

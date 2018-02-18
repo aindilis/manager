@@ -1,0 +1,58 @@
+$VAR1 = {
+	 "Finances" => {
+			Id => "Finances",
+			Keywords => [qw (finances shopping expenses purchases aquisitions income)],
+			Command => "cattach /home/ajd/classified; gnucash /crypt/classified/personal/finances/gnucash",
+		       },
+	 "Events" => {
+		      Id => "Events",
+		      Keywords => [qw (events)],
+		      Command => "cattach /home/ajd/classified; gnumeric /crypt/classified/si/events.gnumeric",
+		     },
+	 "Chat" => {
+		    Id => "Chat",
+		    Keywords => [qw (instant messenging messaging IM gaim)],
+		    Command => "gaim",
+		   },
+	 "Service Locator" => {
+			       Id => "Service Locator",
+			       Keywords => [qw (relevant files services)],
+			       Command => "echo This",
+			      },
+	 "Time Card" => {
+			 Id => "Time Card",
+			 Keywords => [qw (hours being worked payroll timecard)],
+			 Command => "cattach /home/ajd/classified; emacsclient /crypt/classified/casos/hours-being-worked",
+			},
+	 "Planning System" => {
+			 Id => "Planning System",
+			 Keywords => [qw (plan planner planning schedule scheduler)],
+			 Command => "emacsclient /home/ajd/myfrdcsa/codebases/verber/rules",
+			},
+	 "Reading" => {
+		       Id => "Reading",
+		       Keywords => [qw (hypnosis reading listen dictate)],
+		       Command => "/home/ajd/bin/read-aloud.pl",
+		      },
+	 "Music" => {
+		     Id => "Music",
+		     Keywords => [qw (music listen classical)],
+		     Command => "xmms",
+		    },
+	 "Humor" => {
+		     Id => "Humor",
+		     Keywords => [qw (humor)],
+		     Command => "emacsclient /home/ajd/media/text/humor",
+		    },
+	 "Question Answering" => {
+				  Id => "Question Answering",
+				  Keywords => [qw (question answering facts info queries)],
+				  Command => "/home/ajd/bin/webclopedia-client.pl",
+				 },
+	 "Bus Schedules" => {
+			     Id => "Bus Schedules",
+			     Keywords => [qw (bus schedules transportation buses)],
+			     Command => "/home/ajd/bin/bus-schedules.pl",
+			    },
+
+	};

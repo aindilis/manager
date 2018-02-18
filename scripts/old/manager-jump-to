@@ -1,0 +1,84 @@
+#!/usr/bin/perl -w
+
+use BOSS::Config;
+
+use Data::Dumper;
+use String::ShellQuote;
+
+$specification = q(
+	-h <host>		FQDN of the host that you want to log into
+	-s <screen>		The screen name to try to load with screen -rd or screen -S
+
+	--maximized		The Window, in terms of X and Y, comma separated
+	--vdesktop <xy>		The Window, in terms of X and Y, comma separated
+
+	--wmtype <style>	Style, whether it is a one or many
+
+	--width <w>		Width of the virtual desktop
+	--height <w>		Height of the virtual desktop
+);
+
+my $config =
+  BOSS::Config->new
+  (Spec => $specification);
+my $conf = $config->CLIConfig;
+# $UNIVERSAL::systemdir = "/var/lib/myfrdcsa/codebases/internal/manager";
+
+my $hostname = $conf->{'-h'};
+my $maximized = defined $conf->{'--maximized'} ? " -maximized " : "";
+my $vdesktop = $conf->{'--vdesktop'};
+my $remotecommand;
+my $xtermcommand = "uxterm +lc";
+if (exists $conf->{'-s'}) {
+  $remotecommand = "screen -rd ".$conf->{'-s'}." || screen -S ".$conf->{'-s'}; # possibly add a command to start emacs here
+  if ($conf->{-s} =~ /^(root|cpm-.+)$/) {
+    $xtermcommand = "xterm";
+  }
+} elsif (exists $conf->{'-c'}) {
+  $remotecommand = $conf->{'-c'};
+}
+$remotecommand = shell_quote($remotecommand);
+
+my ($x,$y) = split /,/, $vdesktop;
+MoveTo
+  (
+   Style => $conf->{'--wmtype'},
+   X => $x,
+   Y => $y,
+   Width => $conf->{'--width'},
+   Height => $conf->{'--height'},
+  );
+
+# eventually check to see if these are already open and just open the
+# ones that aren't
+
+my $hostnamelocal = `hostname -f`;
+chomp $hostnamelocal;
+my $command;
+if ($hostnamelocal eq $hostname) {
+  # make sure to sudo screen -S root on columcille from columcille, etc.
+  $command = "$xtermcommand $maximized -e $remotecommand";
+} else {
+  my $user = "";
+  if ($conf->{'-s'} eq "root") {
+    $user = "root@";
+  }
+  $command = "$xtermcommand $maximized -e \"ssh $user$hostname -t $remotecommand\"";
+}
+
+print $command."\n";
+system $command;
+
+sub MoveTo {
+  my %args = @_;
+  my $windownum = ($args{X} + (6 * $args{Y}));
+  my $args;
+  if ($args{Style} eq "one") {
+    $args = shell_quote("-o ". ($args{X} * $args{Width}).",".($args{Y} * $args{Height}));
+  } elsif ($args{Style} eq "many") {
+    $args = "-s $windownum";
+  }
+  my $command = "wmctrl $args";
+  print $command."\n";
+  system $command;
+}

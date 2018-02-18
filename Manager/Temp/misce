@@ -1,0 +1,33 @@
+sub Strategy1 {
+  my ($self, %args) = @_;
+  my @diff;
+  my @ediff;
+  my $lt;
+  my $le;
+  foreach my $t (@times) {
+    if (! $lt) {
+      $lt = $t;
+    } else {
+      if ($t - $lt > 5 * 3600) {
+	# this is a sleep event
+	# push @events, $t;
+	if (! $le) {
+	  $le = $t;
+	} else {
+	  push @ediff, $t - $le;
+	  $le = $t;
+	}
+      }
+      $lt = $t;
+    }
+  }
+  my $gnuplot = System::GnuPlot->new;
+  my $df = "temp.csv";
+  # my $c = join("\n",@diff);
+  my $c = join("\n",@ediff);
+  Save
+    (File => $df,
+     Contents => $c);
+  $gnuplot->Plot
+    (Command => "plot \"$df\"");
+}

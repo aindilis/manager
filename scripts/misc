@@ -1,0 +1,10 @@
+my ($username, $password) = ('<REDACTED>','<REDACTED>');
+$mech->credentials("https://<REDACTED>", $username, $password);
+
+
+sub MechGet {
+  my $uri = shift;
+  my $req = new HTTP::Request GET => $uri;
+  # $req->authorization_basic($username, $password);
+  $mech->request($req);
+}

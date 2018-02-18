@@ -1,0 +1,40 @@
+--- /usr/share/perl5/Schedule/Cron.pm	2000-07-05 03:02:26.000000000 -0500
++++ Cron.pm	2009-01-21 18:54:15.000000000 -0600
+@@ -576,6 +576,21 @@
+ 
+ =cut
+ 
++sub MyCompare {
++  my ($a,$b) = @_;
++  if ($a =~ /^\d+$/ and $b =~ /^\d+$/) {
++    return $a <=> $b;
++  } elsif ($a eq $b) {
++    return 0;
++  } else {
++    if ($a !~ /^\d+$/) {
++      return -1;
++    } else {
++      return 1;
++    }
++  }
++}
++
+ sub get_next_execution_time { 
+   my $self = shift;
+   my $cron_entry = shift;
+@@ -617,13 +632,13 @@
+       } else {
+ 	$t = $ALPHACONV[$i]{lc $t} if $t !~ /^(\d+|\*)$/;
+ 	$t = $LOWMAP[$i]{$t} if exists($LOWMAP[$i]{$t});
+-	
++
+ 	die "Invalid cronentry '",$cron_entry->[$i],"'" 
+ 	  if (!defined($t) || ($t ne '*' && ($t < $RANGES[$i][0] || $t > $RANGES[$i][1])));
+ 	push @res,$t;
+       }
+     }
+-    push @expanded, [ sort { $a <=> $b} @res];
++    push @expanded, [ sort { MyCompare($a, $b) } @res];
+   }
+ 
+   # Calculating time:

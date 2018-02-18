@@ -1,0 +1,4 @@
+/etc/cmanager/cmanager/loud.aumixrc
+/etc/cmanager/cmanager/quiet.aumixrc
+/etc/cmanager/cmanager/wakeup.txt
+/etc/cron.d/cmanager

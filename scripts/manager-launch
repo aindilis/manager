@@ -1,0 +1,46 @@
+#!/usr/bin/perl -w
+
+use BOSS::Config;
+use Manager::Misc::VDesktopManager;
+
+use Data::Dumper;
+use String::ShellQuote;
+
+$specification = q(
+	-c <command>	The command to run on the target host (default: ssh,screen,memax)
+
+	-t <REMOTEHOST>		FQDN of the target host
+	-l <localhost>		FQDN of the local host
+	-s <screen>		The screen name to try to load with screen -rd or screen -S
+
+	--maximized		Maximize the window
+	--vdesktop <xy>		The Virtual Desktop, in terms of X and Y, comma separated
+
+	--wmtype <style>	Style, whether it is a one or many
+	--width <w>		Width of the virtual desktop
+	--height <h>		Height of the virtual desktop
+);
+
+my $config =
+  BOSS::Config->new
+  (Spec => $specification);
+my $conf = $config->CLIConfig;
+# $UNIVERSAL::systemdir = "/var/lib/myfrdcsa/codebases/internal/manager";
+
+my $vdesktopmanager = Manager::Misc::VDesktopManager->new
+  (
+   # Simulate => 1,
+   LocalHost => $conf->{'-l'},
+   Style => $conf->{'--wmtype'},
+   Width => $conf->{'--width'},
+   Height => $conf->{'--height'},
+  );
+
+$vdesktopmanager->Launch
+  (
+   RemoteHostname => $conf->{'-t'},
+   Screen => $conf->{-s},
+   Maximized => defined $conf->{'--maximized'} ? " -maximized " : "",
+   VDesktop => $conf->{'--vdesktop'},
+   RemoteCommand => $conf->{'-c'},
+  );

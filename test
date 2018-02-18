@@ -1,0 +1,2 @@
+./manager -a -d 10
+./manager -a -t 114500

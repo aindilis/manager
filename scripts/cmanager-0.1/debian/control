@@ -1,0 +1,15 @@
+Source: cmanager
+Section: unknown
+Priority: optional
+Maintainer: Andrew J. Dougherty <ajd@frdcsa.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.0
+
+Package: cmanager
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Cmanager is a simple time management system for Aspergers
+ It works by automatically taking control over the computer
+ and reminding the user to do things they would have
+ otherwise forgotten, like eat, sleep and go to the bathroom.
+ Oh, and judging by the fruitflies, take out the trash!

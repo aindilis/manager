@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# cd /var/lib/myfrdcsa/codebases/internal/manager && rxvt -geometry 179x66+0+34 -e ./manager -r $@
+# cd /var/lib/myfrdcsa/codebases/internal/manager && uxterm +lc -geometry 278+74+0+34 -e ./manager -r $@
+cd /var/lib/myfrdcsa/codebases/internal/manager && uxterm +lc -geometry 278x74+0+0 -e ./manager -r $@

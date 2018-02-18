@@ -1,0 +1,286 @@
+my $it = {
+	  "DEBUG" => [
+		      {
+		       Cron => "# * * * * *",
+		       Name => "Andrew Dougherty",
+		       Task => "DEBUGGER",
+		       Desc => "DEBUGGER",
+		       WarningTime => "0 minutes",
+		      },
+		      {
+		       Cron => "# 0,5,10,15,20,25,30,35,40,45,50,55 * * * *",
+		       Name => "Andrew Dougherty",
+		       Task => "DEBUGGER2",
+		       Desc => "DEBUGGER2",
+		       WarningTime => "0 minutes",
+		      },
+		      # Clean cell phone of messages.
+		     ],
+
+	  "REGULAR TASKS" => [
+			      {
+			       Cron => "0 9 0,14 * *",
+			       Name => "Andrew Dougherty",
+			       Task => "GnuCash",
+			       Desc => "Update GnuCash Records",
+			       WarningTime => "3 hours",
+			      },
+			      {
+			       Cron => "0 13 * * *",
+			       Name => "Andrew Dougherty",
+			       Task => "Update FRDCSA Git",
+			       Desc => "Update FRDCSA Git archives on all systems",
+			       WarningTime => "3 hours",
+			      },
+			      {
+			       Cron => "0 13 * * *",
+			       Name => "Andrew Dougherty",
+			       Task => "Read Liferea",
+			       Desc => "Read all new Liferea entries",
+			       WarningTime => "3 hours",
+			      },
+			      {
+			       Cron => "0 9 * * 3",
+			       Name => "Andrew Dougherty",
+			       Task => "Do all-day-task",
+			       Desc => "Do an all day programming task (list is in Manager Todo doc)",
+			       WarningTime => "3 hours", Level => "important",
+			      },
+			     ],
+
+
+	  "ESSENTIAL" => {
+			  "food" => [
+				     {
+				      Cron => "0 9   * * *",
+				      Name => "Andrew Dougherty",
+				      Task => "Breakfast",
+				      Desc => "Make breakfast",
+				      WarningTime => "1 hours",
+				     },
+				     {
+				      Cron => "0 13  * * *",
+				      Name => "Andrew Dougherty",
+				      Task => "Lunch",
+				      Desc => "Make lunch",
+				      WarningTime => "1 hours",
+				     },
+				     {
+				      Cron => "0 17  * * *",
+				      Name => "Andrew Dougherty",
+				      Task => "Dinner",
+				      Desc => "Make dinner",
+				      WarningTime => "1 hours",
+				     },
+				    ],
+
+			  "meds" => [
+				     {
+				      Cron => "0 9    * * *",
+				      Name => "Andrew Dougherty",
+				      Task => "Morning Meds",
+				      Desc => "Take your morning meds.",
+				      WarningTime => "5 minutes",
+				     },
+				     {
+				      Cron => "0 21   * * *",
+				      Name => "Andrew Dougherty",
+				      Task => "Evening Meds",
+				      Desc => "Take your evening meds.",
+				      WarningTime => "5 minutes",
+				     },
+				     {
+				      Cron => "0 14 25 * *",
+				      Name => "Andrew Dougherty",
+				      Task => "Pick up Meds",
+				      Desc => "Pick up Meds",
+				      WarningTime => "30 minutes",
+				     },
+				    ],
+
+			  "chores" => [
+				       {
+					Cron => "30 10   * * 4",
+					Name => "Andrew Dougherty",
+					Task => "Clean",
+					Desc => "Clean garage, computer room, bedroom, etc.",
+					WarningTime => "30 minutes",
+				       },
+				       {
+					Cron => "30 10   * * *",
+					Name => "Andrew Dougherty",
+					Task => "Put load of laundry in",
+					Desc => "Put load of laundry in",
+					WarningTime => "30 minutes",
+				       },
+				       {
+					Cron => "30 11   * * *",
+					Name => "Andrew Dougherty",
+					Task => "Organize",
+					Desc => "Organize per Joe's recommendation",
+					WarningTime => "30 minutes",
+				       },
+				       {
+					Cron => "0 19   * * 0",
+					Name => "Andrew Dougherty",
+					Task => "Take out Trash",
+					Desc => "Take out the Trash",
+					WarningTime => "2 hours",
+				       },
+				       {
+					Cron => "30 10 0,14 * *",
+					Name => "Andrew Dougherty",
+					Task => "Wash bedding",
+					Desc => "Put bedding through Laundry",
+					WarningTime => "3 hours",
+				       },
+				       {
+					Cron => "30 10 14 * *",
+					Name => "Andrew Dougherty",
+					Task => "Change central air filter",
+					Desc => "Change central air filter",
+					WarningTime => "3 hours",
+				       },
+				       {
+					Cron => "30 10 14 * *",
+					Name => "Andrew Dougherty",
+					Task => "Clean vacuum cleaner",
+					Desc => "Clean vacuum cleaner",
+					WarningTime => "3 hours",
+				       },
+				      ],
+
+			  "check-ups" => [
+					  {
+					   Cron => "0  17  * * 0-1",
+					   Name => "Andrew Dougherty",
+					   Task => "Call Justin",
+					   Desc => "Check on Justin.",
+					   WarningTime => "5 minutes",
+					  },
+					  {
+					   Cron => "0  22  * * 2-6",
+					   Name => "Andrew Dougherty",
+					   Task => "Call Justin",
+					   Desc => "Check on Justin.",
+					   WarningTime => "5 minutes",
+					  },
+					  {
+					   Cron => "30 17  * * 1,3,5",
+					   Name => "Andrew Dougherty",
+					   Task => "Call Chris Lamkind",
+					   Desc => "Check on Chris.",
+					   WarningTime => "5 minutes",
+					  },
+					  {
+					   Cron => "0  18  * * 1,3,5",
+					   Name => "Andrew Dougherty",
+					   Task => "Call Grandma",
+					   Desc => "Check on Grandma.",
+					   WarningTime => "5 minutes",
+					  },
+					  {
+					   Cron => "0  18  * * *",
+					   Name => "Andrew Dougherty",
+					   Task => "Have Mom Call Grandma",
+					   Desc => "Have Mom check on Grandma.",
+					   WarningTime => "5 minutes",
+					  },
+					  {
+					   Cron => "0  17  * * *",
+					   Name => "Andrew Dougherty",
+					   Task => "Talk to Mom",
+					   Desc => "Check on Mom.",
+					   WarningTime => "5 minutes",
+					  },
+
+					  {
+					   Cron => "# 0  13  * * 0,2,4,6",
+					   Name => "Andrew Dougherty",
+					   Task => "Training Mom on computer",
+					   Desc => "Training Mom on computer",
+					   WarningTime => "30 minutes",
+					  },
+					  {
+					   Cron => "# 0  13  * * 0,2,4,6",
+					   Name => "Andrew Dougherty",
+					   Task => "Watch Training Video",
+					   Desc => "http://videolectures.net/",
+					   WarningTime => "30 minutes",
+					  },
+					 ]
+			 },
+
+	  "INTERESTS" => {
+			  "gaming" => [
+				       {
+					Cron => "30 18  * * 4",
+					Name => "Andrew Dougherty",
+					Task => "Downer's Grove Boardgames",
+					Desc => "From 6:30 pm",
+					WarningTime => "1 hours",
+				       },
+				       {
+					Cron => "0 19  * * 5",
+					Name => "Andrew Dougherty",
+					Task => "D&D",
+					Desc => "From 7 pm",
+					WarningTime => "1 hours",
+				       },
+				      ],
+			  "basketball" => [
+					   {
+					    Cron => "0 12  * * 2",
+					    Name => "Andrew Dougherty",
+					    Task => "Tuesday Basketball",
+					    Desc => "From 12:00 - 2:00.",
+					    WarningTime => "3 hours",
+					   },
+					   {
+					    Cron => "30 18  * * 3",
+					    Name => "Andrew Dougherty",
+					    Task => "Wednesday Basketball",
+					    Desc => "From 6:30 - 8:30.",
+					    WarningTime => "3 hours",
+					   },
+					   {
+					    Cron => "0 12  * * 5",
+					    Name => "Andrew Dougherty",
+					    Task => "Friday Basketball",
+					    Desc => "From 12:00 - 2:00.",
+					    WarningTime => "3 hours",
+					   },
+					  ],
+			 },
+
+	  "IRISH INTERESTS" => {
+
+				"IAHC" => [
+					   {
+					    Cron => "0  19  * * 3",
+					    Name => "Andrew Dougherty",
+					    Task => "Go to IAHC",
+					    Desc => "Gaelic lessons and library at IAHC are today."
+					    WarningTime => "6 hours",
+					   },
+					  ],
+				"Pause for Tara" => [
+						     {
+						      Cron => "# 0 13   * * *",
+						      Name => "Andrew Dougherty",
+						      Task => "Pause For Tara",
+						      Desc => "Pause for Tara",
+						      WarningTime => "15 minutes",
+						     },
+						    ],
+				"Study Gaelic" => [
+						   {
+						    Cron => "0  15  * * 2",
+						    Name => "Andrew Dougherty",
+						    Task => "Study Gaelic",
+						    Desc => "Study Gaelic",
+						    WarningTime => "30 minutes",
+						   },
+						  ],
+			       },
+	  };

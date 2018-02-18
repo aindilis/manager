@@ -1,0 +1,4 @@
+#!/bin/sh
+
+modprobe -r snd-ali5451
+modprobe snd-ali5451

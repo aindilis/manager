@@ -1,0 +1,57 @@
+# m h  dom mon dow   command
+
+
+# DEBUG
+
+# * * * * *   {Name => "Andrew Dougherty", Task => "DEBUGGER", Desc => "DEBUGGER", DueIn => "0 minutes"}
+# 0,5,10,15,20,25,30,35,40,45,50,55 * * * *   {Name => "Andrew Dougherty", Task => "DEBUGGER2", Desc => "DEBUGGER2", DueIn => "0 minutes"}
+
+
+# ESSENTIAL
+
+# food
+50 8   * * 0-2,4-6   {Name => "Andrew Dougherty", Task => "Breakfast", Desc => "Make breakfast", DueIn => "10 minutes"}
+50 12  * * 0-2,4-6   {Name => "Andrew Dougherty", Task => "Lunch", Desc => "Make lunch", DueIn => "10 minutes"}
+50 16  * * *   {Name => "Andrew Dougherty", Task => "Dinner", Desc => "Make dinner", DueIn => "10 minutes"}
+
+# meds
+0 9    * * *   {Name => "Andrew Dougherty", Task => "Morning Meds", Desc => "Take your morning meds.", DueIn => "5 minutes"}
+0 21   * * *   {Name => "Andrew Dougherty", Task => "Evening Meds", Desc => "Take your evening meds.", DueIn => "5 minutes"}
+
+# chores
+0 10   * * 4   {Name => "Andrew Dougherty", Task => "Clean", Desc => "Clean garage, computer room, bedroom, etc.", DueIn => "30 minutes"}
+0 11   * * 0-2,4-6   {Name => "Andrew Dougherty", Task => "Organize", Desc => "Organize per Joe's recommendation", DueIn => "30 minutes"}
+
+# check-ups
+0  17  * * 0-1   {Name => "Andrew Dougherty", Task => "Call Justin", Desc => "Remember to check on Justin.", DueIn => "5 minutes"}
+0  22  * * 2-6   {Name => "Andrew Dougherty", Task => "Call Justin", Desc => "Remember to check on Justin.", DueIn => "5 minutes"}
+30 17  * * 0,2,4,6 {Name => "Andrew Dougherty", Task => "Call Chris", Desc => "Remember to check on Chris.", DueIn => "5 minutes"}
+0  18  * * *   {Name => "Andrew Dougherty", Task => "Call Susie Hilton", Desc => "Remember to check on (grand)mother.", DueIn => "5 minutes"}
+0  17  * * *   {Name => "Andrew Dougherty", Task => "Call Mom", Desc => "Remember to check on Mom.", DueIn => "5 minutes"}
+
+0  13  * * 0,2,4,6 {Name => "Andrew Dougherty", Task => "Training Mom on computer", Desc => "Training Mom on computer", DueIn => "30 minutes"}
+0  13  * * 0,2,4,6 {Name => "Andrew Dougherty", Task => "Watch Training Video", Desc => "http://videolectures.net/", DueIn => "30 minutes"}
+
+
+# INTERESTS
+
+# gaming
+30 17  * * 4   {Name => "Andrew Dougherty", Task => "Downer's Grove Boardgames", Desc => "From 6:30 pm", DueIn => "1 hours"}
+30 18  * * 5   {Name => "Andrew Dougherty", Task => "D&D", Desc => "From 7 pm", DueIn => "30 minutes"}
+
+# basketball
+30 11  * * 2   {Name => "Andrew Dougherty", Task => "Tuesday Basketball", Desc => "From 12:00 - 2:00.", DueIn => "30 minutes"}
+0  18  * * 3   {Name => "Andrew Dougherty", Task => "Wednesday Basketball", Desc => "From 6:30 - 8:30.", DueIn => "30 minutes"}
+30 11  * * 5   {Name => "Andrew Dougherty", Task => "Friday Basketball", Desc => "From 12:00 - 2:00.", DueIn => "30 minutes"}
+
+
+# IRISH INTERESTS
+
+# IAHC
+0  13  * * 3   {Name => "Andrew Dougherty", Task => "Go to IAHC", Desc => "Gaelic lessons and library at IAHC are today.",DueIn => "6 hours"}
+
+# Pause for Tara
+55 12   * * 0-2,4-6   {Name => "Andrew Dougherty", Task => "Pause For Tara", Desc => "Pause for Tara", DueIn => "5 minutes"}
+
+# Study Gaelic
+30  14  * * 2   {Name => "Andrew Dougherty", Task => "Study Gaelic", Desc => "Study Gaelic", DueIn => "30 minutes"}

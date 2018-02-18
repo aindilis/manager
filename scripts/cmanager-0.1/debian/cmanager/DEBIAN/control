@@ -1,0 +1,12 @@
+Package: cmanager
+Version: 20040825-1
+Section: unknown
+Priority: optional
+Architecture: i386
+Installed-Size: 148
+Maintainer: Andrew J. Dougherty <ajd@frdcsa.org>
+Description: Cmanager is a simple time management system for Aspergers
+ It works by automatically taking control over the computer
+ and reminding the user to do things they would have
+ otherwise forgotten, like eat, sleep and go to the bathroom.
+ Oh, and judging by the fruitflies, take out the trash!

@@ -1,0 +1,52 @@
+#!/usr/bin/perl -w
+
+my $bin = "/home/ajd/bin";
+
+my %commands = (
+		"volume mute" => sub {
+		  system "echo aumix -f /home/ajd/aumix/aumix.mute -L q";
+		  system "aumix -f /home/ajd/aumix/aumix.mute -L q";
+		},
+		"volume medium" => sub {
+		  system "echo aumix -f /home/ajd/aumix/aumix.medium -L q";
+		  system "aumix -f /home/ajd/aumix/aumix.medium -L q";
+		},
+		"volume loud" => sub {
+		  system "echo aumix -f /home/ajd/aumix/aumix.loud -L q";
+		  system "aumix -f /home/ajd/aumix/aumix.loud -L q";
+		},
+		"alarm on" => sub {
+		  system "($bin/next-alarm.pl)&";
+		},
+		"alarm off" => sub {
+		  system "$bin/killmatches /home/ajd/bin/next-alarm";
+		  system "$bin/killmatches /home/ajd/bin/alarm";
+		  system "$bin/volume medium";
+		},
+		"motion on" => sub {
+
+		},
+		"motion off" => sub {
+		  system "$bin/killmatches motion";
+		},
+		"record start" => sub {
+
+		},
+		"record stop" => sub {
+		  system "$bin/killmatches";
+		},
+		"time" => sub {
+
+		},
+		"bus" => sub {
+
+		},
+	       );
+
+foreach my $command (@ARGV) {
+  foreach my $key (keys %commands) {
+    if ($command eq $key) {
+      &{$commands{$command}};
+    }
+  }
+}

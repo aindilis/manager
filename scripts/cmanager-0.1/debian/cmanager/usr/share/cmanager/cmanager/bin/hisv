@@ -1,0 +1,33 @@
+#!/bin/sh
+
+VIEWER=lynx
+case "$1" in
+-n)
+    VIEWER=mozilla
+;;
+esac
+
+FILES=`glimpse -H /sys/data/ghis -W -i "$@" | perl -e 'while(<>) { s/:.*//; $e{$_}=1; } foreach (keys %e) { print }'`
+NUM=`echo "$FILES" | wc -l`
+echo "<html>$NUM</html>" | lynx -stdin
+case "$VIEWER" in
+lynx)
+    for it in `echo $FILES`
+	do 
+	if file $it | grep -q DBase  # treat squid files
+	then
+		cat $it | awk '/^$/ {a = 1}; {if (a==1) print}' |\
+		    lynx -stdin
+	else
+		lynx -force_html $it
+	fi
+    done
+;;
+mozilla)
+    for it in `echo $FILES`
+	do
+	mozilla -remote "openURL($it)"
+	read
+    done
+;;
+esac

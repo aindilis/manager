@@ -1,0 +1,185 @@
+(
+ (Programs to Open)
+ (SysTray
+  (pidgin -f)
+  (skype)
+  (gwibber)
+  (amarok)
+  )
+ (Windows
+  (1x1x1
+   )
+  (1x1x2
+   )
+  (2x1x1
+   (ssh frdcsa.org 
+    (screen -rd user)
+    )
+   )
+  (2x1x2
+   )
+  (3x1x1
+   (ssh posi.frdcsa.org
+    (screen -rd user)
+    )
+   )
+  (3x1x2
+   )
+  (4x1x1
+   (emacs24
+    (C-c r u (ushell))
+    (C-c n a r (academician-start-reading)
+     (Modern Perl)
+     )
+    )
+   )
+  (4x1x2
+   (emacs24 new-frame)
+   )
+  (5x1x1
+   (ssh workhorse.frdcsa.org
+    (screen -rd user
+     (emacs -nw)
+     )
+    )
+   )
+  (5x1x2
+   )
+  (6x1x1
+   (ssh justin.frdcsa.org
+    (screen -rd user
+     (emacs -nw)
+     )
+    )
+   (ssh game.frdcsa.org
+    (screen -rd user
+     (emacs -nw)
+     )
+    )
+   )
+  (6x1x2
+   )
+  (1x2x1
+   (setanta-pm cpm-personal)
+   )
+  (1x2x2
+   )
+  (2x2x1
+   (uxterm
+    (ssh root@frdcsa.org)
+    )
+   )
+  (2x2x2
+   )
+  (4x2x1
+   (firefox -P -no-remote (default))
+   )
+  (4x2x2
+   (hotot)
+   )
+  (5x2x1
+   (ssh game.frdcsa.org
+    (x11vnc -passwd *********** -display :0.0)
+    )
+   (xvncviewer game.frdcsa.org)
+   )
+  (5x2x2
+
+   )
+  (6x2x1
+   (screen -rd gnus
+    (emacs -nw
+     (M-x gnus)))
+   )
+  (6x2x2
+   (screen -rd twitter
+    (emacs -nw
+     (M-x twit)))
+   )
+  (1x3x1
+   (mplayer br:////media/..... -framedrop hard)
+   )
+  (1x3x2
+   )
+  (2x3x1
+   (eclipse)
+   )
+  (2x3x2
+   )
+  (4x3x1
+   (openxenmanager)
+   (emacs24
+    (/var/lib/myfrdcsa/codebases/minor/vm-manager/xcp/setup-ssh.sh)
+    )
+   (uxterm
+    (ssh root@173.165.36.104)
+    )
+   )
+  (4x3x2
+   )
+  (6x3x1
+   (screen -rd irc1
+    (emacs -nw
+     (M-x erc-logon-1)))
+   )
+  (6x3x2
+   (gmusicbrowser (w/ gnome mmkeys plugin enabled))
+   )
+  (1x4x1
+   gnucash
+   )
+  (1x4x2
+   )
+  (2x4x1
+   (icedove)
+   )
+  (2x4x2
+   )
+  (3x4x1
+   (cla -r ...)
+   )
+  (3x4x2
+   )
+  (4x4x1
+   (screen -S spse
+    (emacs -nw 
+     (spse2 -C ShoppingList)))
+   )
+  (4x4x2
+   )
+  (5x4x1
+   (screen -S paperless-office
+    (emacs -nw
+     (paperless-office -c AndrewDougherty)))
+   )
+  (5x4x2
+   (screen -S js-rapid-response
+    (emacs -nw 
+     (js-rapid-response-launch)))
+   )
+  (6x4x1
+   (screen -rd irc2
+    (emacs -nw
+     (M-x erc-logon-2)))
+   )
+  (6x4x2
+   )
+  ;; (1x4
+  ;;  (mozilla -P default
+  ;;   (Gmail)
+  ;;   (Google Calendar)
+  ;;   (Yahoo)
+  ;;   (Facebook)
+  ;;   (Chase)
+  ;;   (Paypal)
+  ;;   )
+  ;;  )
+  (
+   icedove
+   irc1, irc2
+   launch-chris.sh
+   ssh frdcsa.org, sudo su chris-a-lampkin, pine
+   ssh frdcsa.org, sudo su andrew-j-dougherty, pine
+   )
+  )
+ )

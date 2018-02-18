@@ -1,0 +1,122 @@
+(
+ (Programs to Open)
+ (SysTray
+  (pidgin -f)
+  (skype)
+  (gwibber)
+  (amarok)
+  )
+ (Windows
+  (1x1
+   ;; (Open Firefox
+   ;; (Google Calendar)
+   ;; )
+   )
+  (2x1
+   (ssh frdcsa.org 
+    (screen -rd user)
+    )
+   )
+  (3x1
+   (ssh posi.frdcsa.org
+    (screen -rd user)
+    )
+   )
+  (4x1
+   (emacs24
+    (C-c r u (ushell))
+    (C-c n a r (academician-start-reading)
+     (Modern Perl)
+     )
+    )
+   (firefox -P -no-remote (default))
+   )
+  (5x1
+   (ssh workhorse.frdcsa.org
+    (screen -rd user
+     (emacs -nw)
+     )
+    )
+   )
+  (6x1
+   (ssh justin.frdcsa.org
+    (screen -rd user
+     (emacs -nw)
+     )
+    )
+   (ssh game.frdcsa.org
+    (screen -rd user
+     (emacs -nw)
+     )
+    )
+   )
+  (1x2
+   (setanta-pm cpm-personal)
+   )
+  (2x2
+   (uxterm
+    (ssh root@frdcsa.org)
+    )
+   )
+  (4x2
+   (sudo screen -S root)
+   )
+  (5x2
+   (ssh game.frdcsa.org
+    (x11vnc -passwd *********** -display :0.0)
+    )
+   (xvncviewer game.frdcsa.org)
+   )
+  (6x2
+   (screen -rd gnus)
+   )
+  (1x3
+   (mplayer br:////media/..... -framedrop hard)
+   )
+  (2x3
+   (eclipse)
+   )
+  (4x3
+   (openxenmanager)
+   (emacs24
+    (/var/lib/myfrdcsa/codebases/minor/vm-manager/xcp/setup-ssh.sh)
+    )
+   (uxterm
+    (ssh root@173.165.36.104)
+    )
+   )
+  (1x4
+   gnucash
+   )
+  (2x4
+   (icedove)
+   )
+  (3x4
+   (cla -r ...)
+   )
+  (4x4
+   (spse2 -C ShoppingList)
+   )
+  (5x4
+   (paperless-office -c AndrewDougherty)
+   (js-rapid-response-launch)
+   )
+  ;; (1x4
+  ;;  (mozilla -P default
+  ;;   (Gmail)
+  ;;   (Google Calendar)
+  ;;   (Yahoo)
+  ;;   (Facebook)
+  ;;   (Chase)
+  ;;   (Paypal)
+  ;;   )
+  ;;  )
+  (
+   icedove
+   irc1, irc2
+   launch-chris.sh
+   ssh frdcsa.org, sudo su chris-a-lampkin, pine
+   ssh frdcsa.org, sudo su andrew-j-dougherty, pine
+   )
+  )
+ )

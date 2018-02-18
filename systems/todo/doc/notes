@@ -1,0 +1,43 @@
+# this program will be run in between every shell command
+
+# it will update the user with timely reminders about his/her todo list
+
+# it will connect to al.frdcsa.org if on a different host, because
+# that is where the central todo system is being kept
+
+# # it shows Emergency tasks in Bold
+
+# it does frequent reminders
+
+# it pulls data from calendars, notifies us of upcoming events...
+
+# it puts stuff from our other planning systems in plain view
+
+# it shows which systems we should be focused on (based on score/pse).
+
+
+# also include progress reports occasionally
+
+# don't worry about client server at the moment, just implement it here, no wait, that's wrong
+
+# # allow the user to declare silence or a "warn level", to stave off
+# # warnings below a threshold of criticality
+
+# find all the existing systems for doing this and incorporate the
+# relevant parts, like light, normalform (orig), task, todo, etc.
+
+# warn the user when to take breaks.
+
+# run in the unilang window as well
+
+# for things like, talk to guy at blockbuster, if the system notices
+# you are planning on going to blockbuster, mention this as a priority
+# item
+
+# develop a model of how frequently someone is shown something
+
+# show priority tasks from PSE
+
+# consult this: /var/lib/myfrdcsa/codebases/internal/pse/scripts/agenda.pl
+# consult this: /var/lib/myfrdcsa/codebases/internal/pse/scripts/get-habitual.pl
+# have it read todo items (slowly)

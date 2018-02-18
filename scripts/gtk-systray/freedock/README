@@ -1,0 +1,45 @@
+Freedock is a Tcl/Tk library for bilding system tray applet
+according to the freedesktop system tray spec
+http://www.freedesktop.org/Standards/systemtray-spec
+
+It ist licensed under GPL
+by Alexander Kreuzer <alex@freesources.org>
+(see COPYING).
+*BSD compatibility and package
+by Emiliano Gavilan <egavilan@eie.fceia.unr.edu.ar>
+
+Requires Tcl/Tk >= 8.4
+
+
+Compile:
+
+Edit the Makefile to match your system.
+Then simply "make" or, if using a non-linux SO (*BSD) "gmake"
+
+
+Usage:
+
+load ./libfreedock.so
+if {[systemtray_exists]} {
+	dockwin $win
+}
+pack [button $win.b]
+
+
+additionally, you can put libfreedock.so and pkgIndex.tcl files
+in your library search path and issue (I do this creating
+/usr/local/lib/freedock-0.1 and copying the two files there)
+
+
+package require Freedock
+if {[systemtray_exists]} {
+        dockwin $win
+}
+pack [button $win.b]
+
+
+
+Know Problem:
+- freedock windows do not have a tansparent background.
+  If a colored panel is used, there will be a grey (or other color)
+  frame around the dockwin.

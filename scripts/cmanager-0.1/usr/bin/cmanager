@@ -1,0 +1,89 @@
+#!/usr/bin/perl -w
+
+my $DISPLAY=":0";
+my $DESTDIR="/var/lib/myfrdcsa/sandbox/cmanager-20040825/cmanager-20040825";
+my $ETCPATH="$DESTDIR/etc/cmanager";
+my $VARPATH="$DESTDIR/var/lib/cmanager";
+my $CMANAGERPATH="$DESTDIR/usr/bin/cmanager";
+
+# set some command paths
+my ($xlock, $xmessage, $freetts, $sgrep, $xterm, $gtypist);
+foreach my $command (qw (xlock xmessage freetts sgrep xterm gtypist)) {
+  $$command = `which $command`;
+  chomp $$command;
+}
+
+# set the arguments
+my ($choice,$arg1,$arg2) = ($ARGV[0] || "",$ARGV[1] || "",$ARGV[2] || "");
+
+sub CManager {
+  if ($choice =~ /hourly/) {
+
+    # display an xlock  message saying "go to the  bathroom and refill
+    # water"
+    system "killall -9 $xlock";
+    system "$xlock -mode flag -message 'go #1 refill water' -erasedelay 0 -timeout 1";
+
+    # when logs  out, xlock message  for 2 minutes of  hand excersizes
+    # and then kill it
+    system "((sleep 120; killall -9 $xlock) &)";
+    system "$xlock -mode flag -message 'hand exersizes' -erasedelay 0 -timeout 1";
+
+  } elsif ($choice =~ /sleep/) {
+
+    # tell the user the nap of selected duration is going to happen in
+    # the selected time
+    system "($xmessage \"$arg2 sec nap in $arg1 secs\"" .
+      " -center -timeout 360000 &)";
+    system "sleep $arg1";
+
+    # go ahead  and sleep  the expected time,  then wake,  playing the
+    # wakeup message
+    system "(sleep $arg2
+	aumix -L -f $ETCPATH$/loud.aumixrc > /dev/null 2> /dev/null
+	$freetts -file $ETCPATH/wakeup.txt)";
+
+  } elsif ($choice =~ /kill/) {
+
+    # This is the one part of the buffalo we don't use, son.  We don't
+    # know what it does.
+    #ps -aux --cols=300 | \
+    #grep -E "$CMANAGERPATH sleep|cat /boot/vmlinuz|$festival|audsp|xlock" |\
+    #grep -v grep | awk '{print $2}' | xargs kill #> /dev/null 2> /dev/null
+
+  } elsif ($choice =~ /hypnotic/) {
+
+    # start clairvoyance with hypnotic instructions
+    system "aumix -L -f $ETCPATH/quiet.aumixrc #> /dev/null 2> /dev/null
+	clair --hypnotic";
+
+  } elsif ($choice =~ /(food|waste)/) {
+
+    # send a message with food preparation instructions
+    system "killall -9 $xlock";
+    system "$xlock -mode flag -message 'prepare $1' -erasedelay 0 -timeout 1";
+
+  } elsif ($choice =~ /gtypist/) {
+
+    # start an xterm with gtypist for specified duration
+    my $seconds = $arg1;
+    system "($xterm -e '$gtypist' &) ; sleep $seconds ; killall $gtypist";
+
+  } elsif ($choice =~ /fix-bugs/) {
+
+    # tell the  user to get fixing  bugs, this needs to  be changed to
+    # support  whatever bug  tracking system  we decide  to  use emacs
+    # /var/lib/cmanager/buglist
+
+  } elsif ($choice =~ /read/) {
+
+    system "$xmessage 'Read some documentation' -center -timeout 360000";
+
+  } else {
+
+    print "Usage: cmanager (sleep|kill|hypnotic|food|waste|gtypist|fix-bugs)\n";
+
+  }
+}
+
+CManager();

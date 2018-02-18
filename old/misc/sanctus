@@ -1,0 +1,4 @@
+#!/bin/sh
+
+mplayer "/home/ajd/media/music/Bach - Mass in B Minor - John Eliot Gardiner (Comple.mp3" -sb 95380000
+# 99403100
